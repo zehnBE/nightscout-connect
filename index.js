@@ -1,3 +1,11 @@
+// Proxy support: bootstrap global-agent if GLOBAL_AGENT_HTTPS_PROXY is set.
+// global-agent patches Node.js http/https agents globally - all axios requests
+// (dexcomshare, glooko, minimedcarelink, eversense) are routed through the proxy.
+// GLOBAL_AGENT_HTTPS_PROXY is set per-deployment (env/compose/kubernetes).
+if (process.env.GLOBAL_AGENT_HTTPS_PROXY) {
+  require('global-agent/bootstrap');
+  console.log('PROXY: global-agent bootstrapped ->', process.env.GLOBAL_AGENT_HTTPS_PROXY);
+}
 
 const { createMachine, Machine, actions, interpret, spawn  } = require('xstate');
 
