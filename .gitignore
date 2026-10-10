@@ -1,2 +1,24 @@
-.*.sw[po]
+# backups / experiments
+*.ORG
+*.ORG-*
+*ORG-*
+*.bak
+*.bak.*
+*.bak-*
+*.orig
+*-GUT*
+*.GUT-*
+*-CRASH-*
+*-MEHR-LOGS*
+*-TZDATA-*
+*-MIT-*
+*versuch*
+*VERSUCH*
+
+# node modules (safety)
 node_modules/
+
+# deployment artefacts (nie in public repo)
+Dockerfile
+docker-compose.yml
+*.tar.gz
